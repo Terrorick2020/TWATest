@@ -4,12 +4,12 @@ import { AppModule } from './app/app.module'
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule)
-    const configService: ConfigService<EnvConfig> = app.get(ConfigService)
+    const configService: ConfigService = app.get(ConfigService)
 
-    const PORT: number = configService.get<number>('PORT')
-    const PREFIX: string = configService.get<string>('PREFIX')
-    const ALLOWED_ORIGINS: string = configService.get<string>('ALLOWED_ORIGINS')
-    const isDev: boolean = configService.get<boolean>('isDev')
+    const PORT = configService.get<number>('PORT') ?? 3000
+    const PREFIX = configService.get<string>('PREFIX') ?? ''
+    const ALLOWED_ORIGINS = configService.get<string>('ALLOWED_ORIGINS')
+    const isDev = configService.get<boolean>('isDev')
 
     app.enableCors({
         origin: isDev ? '*' : ALLOWED_ORIGINS,
@@ -21,4 +21,4 @@ async function bootstrap() {
     await app.listen(PORT)
 }
 
-bootstrap()
+void bootstrap()

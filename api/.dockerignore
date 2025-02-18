@@ -1,0 +1,6 @@
+.prettierrc
+eslint.config.mjs
+.env.example
+
+node_modules/
+test/

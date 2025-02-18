@@ -24,5 +24,3 @@ export type TApiRoutes = {
     app: TAppRoutes
     posts: TPostsRoutes
 }
-
-export type 

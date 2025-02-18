@@ -1,26 +1,6 @@
-export default () => ({
-    apiRoutes: {
-        app: {
-            global: '',
-            inner: {
-                hello: 'hello',
-            },
-        },
-        posts: {
-            global: 'posts',
-            inner: {
-                getList: 'get-list',
-                byId: ':postId',
-                add: 'add',
-                edit: 'edit',
-                delete: 'delete',
-            },
-        },
-    },
-})
+import { TApiRoutes } from '~/types/main.types'
 
-export const ApiRoutes = {
-    prefix: 'api',
+export const apiRoutes: TApiRoutes = {
     app: {
         global: '',
         inner: {
@@ -37,4 +17,4 @@ export const ApiRoutes = {
             delete: 'delete',
         },
     },
-} as const
+}
