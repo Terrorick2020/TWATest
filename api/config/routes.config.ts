@@ -2,7 +2,7 @@ import { TApiRoutes } from '~/types/main.types'
 
 export const apiRoutes: TApiRoutes = {
     app: {
-        global: '',
+        global: 'app',
         inner: {
             hello: 'hello',
         },
