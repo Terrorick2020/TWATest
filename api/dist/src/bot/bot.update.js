@@ -22,10 +22,7 @@ let BotUpdate = class BotUpdate {
         this.botService = botService;
     }
     async onStart(ctx) {
-        await this.botService.sendGreeting(ctx);
-    }
-    async onHelp(ctx) {
-        await this.botService.sendHelp(ctx);
+        await this.botService.start(ctx);
     }
 };
 exports.BotUpdate = BotUpdate;
@@ -36,13 +33,6 @@ __decorate([
     __metadata("design:paramtypes", [telegraf_1.Context]),
     __metadata("design:returntype", Promise)
 ], BotUpdate.prototype, "onStart", null);
-__decorate([
-    (0, nestjs_telegraf_1.Command)('help'),
-    __param(0, (0, nestjs_telegraf_1.Ctx)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [telegraf_1.Context]),
-    __metadata("design:returntype", Promise)
-], BotUpdate.prototype, "onHelp", null);
 exports.BotUpdate = BotUpdate = __decorate([
     (0, nestjs_telegraf_1.Update)(),
     __metadata("design:paramtypes", [bot_service_1.BotService])

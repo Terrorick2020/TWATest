@@ -1,0 +1,61 @@
+@use 'sass:math';
+
+
+@mixin font-inter($weight: 400, $style: normal) {
+    font-family: 'Inter', sans-serif;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin fluid-text($max: 48, $min: 16) {
+    $maxViewportWidth: 1400;
+    $minViewportWidth: 360;
+
+    $maxSize: math.div($max, 16);
+    $minSize: math.div($min, 16);
+    $maxWidth: math.div($maxViewportWidth, 16);
+    $minWidth: math.div($minViewportWidth, 16);
+
+    $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+    $yAxisIntersection: - $minWidth * $slope + $minSize;
+
+    font-size: clamp(
+        #{$minSize * 1rem},
+        #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+        #{$maxSize * 1rem}
+    );
+}
+
+@function strip-units($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@function rem($pixel) {
+
+    @if math.is-unitless($pixel) {
+
+        @return math.div($pixel, 16) + rem;
+    } @else if math.unit($pixel) == px {
+
+        $number: strip-units($pixel);
+
+        @return math.div($number, 16) + rem;
+    } @else {
+        @error "Функция `rem` использует только числа или px как единицы измерения! Другие значения недоступны!";
+    }
+}
+
+@mixin Flex( $f_dir: column, $j_content: center, $a_items: center ) {
+    display: flex;
+    flex-direction: $f_dir;
+    justify-content: $j_content;
+    align-items: $a_items;
+}
+
+@mixin OAuthHover( $color: red ) {
+    &:hover {
+        path {
+            fill: $color;
+        }
+    }
+}

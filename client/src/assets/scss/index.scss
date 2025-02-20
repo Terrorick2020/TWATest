@@ -1,0 +1,11 @@
+@use "tailwindcss";
+
+@use "./layouts/default.scss";
+
+@use "./ui/MuiChip.scss";
+@use "./ui/Button.scss";
+@use "./ui/MuiBottomNavigation.scss";
+
+@use "./global.scss";
+@use "./slider.scss";
+@use "./details.scss";

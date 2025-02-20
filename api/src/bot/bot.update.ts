@@ -8,11 +8,11 @@ export class BotUpdate {
 
     @Command('start')
     async onStart(@Ctx() ctx: Context) {
-        await this.botService.sendGreeting(ctx)
+        await this.botService.start(ctx)
     }
 
-    @Command('help')
-    async onHelp(@Ctx() ctx: Context) {
-        await this.botService.sendHelp(ctx)
-    }
+    // @Command('help')
+    // async onHelp(@Ctx() ctx: Context) {
+    //     await this.botService.sendHelp(ctx)
+    // }
 }

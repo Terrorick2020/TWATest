@@ -4,5 +4,4 @@ export declare class BotUpdate {
     private readonly botService;
     constructor(botService: BotService);
     onStart(ctx: Context): Promise<void>;
-    onHelp(ctx: Context): Promise<void>;
 }

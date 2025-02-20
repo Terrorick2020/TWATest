@@ -1,0 +1,117 @@
+.slider {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 20fr;
+    overflow: hidden;
+
+    .slider__nav {
+        margin-top: 1em;
+        grid-row: 1;
+        align-self: start;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+
+        .nav-items {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            gap: 0.5em;
+        }
+    }
+
+    .slider__poster {
+        grid-row: 2;
+        align-self: end;
+        width: 100%;
+        height: 100%;
+        padding-top: 1em;
+
+        .poster__content {
+            width: 100%;
+            height: 100%;
+            padding: 1em 1em;
+            display: grid;
+            grid-template-rows: 2fr auto 5fr;
+            box-shadow: inset 0 1.875rem 1rem -0.3125rem var(--slider-shadow-color),
+                        inset 0 -1.875rem 1.25rem -0.3125rem var(--slider-shadow-color);
+
+            .poster__background {
+                .link {
+                    position: absolute;
+                    width: 100%;
+                }
+            }
+
+            .poster__header {
+                grid-row: 1;
+                align-self: start;
+                z-index: 2;
+
+                .poster-bar {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+
+                    .poster-bar__item {
+                        width: 27px;
+                        height: 4px;
+                        border-radius: 0.7em;
+                        background: var(--slider-bar-item-color);
+
+                        &.active {
+                            background: var(--slider-bar-item-active-color);
+                        }
+                    }
+                }
+
+                .poster-desc {
+                    width: 100%;
+                    margin-top: 1em;
+
+                    .location {
+                        width: 100%;
+                        margin-top: 1.4em;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 0.6em;
+                    }
+
+                    .stack {
+                        margin-top: 1em;
+                    }
+                }
+            }
+
+            .poster__footer {
+                grid-row: 3;
+                align-self: end;
+                z-index: 2;
+
+                .poster__prof-desc .text {
+                    margin-block: 0.8em;
+                }
+
+                .poster__btns {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .poster-btn {
+                        &:first-of-type {
+                            background: #ffffff33;
+                        }
+                        &:last-of-type {
+                            background: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

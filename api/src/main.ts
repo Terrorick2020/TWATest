@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core'
 import { ConfigService } from '@nestjs/config'
-import { AppModule } from './app/app.module'
+import { BotModule } from './bot/bot.module'
 
 async function bootstrap() {
-    const app = await NestFactory.create(AppModule)
+    const app = await NestFactory.create(BotModule)
     const configService: ConfigService = app.get(ConfigService)
 
     const PORT = configService.get<number>('PORT') ?? 3000

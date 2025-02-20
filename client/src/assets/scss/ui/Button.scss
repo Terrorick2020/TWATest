@@ -1,0 +1,28 @@
+#root {
+    .MuiButtonBase-root {
+        &.text-fon {
+            background: #413F4066;
+        }
+
+        &.rounded {
+            border-radius: 32px;
+        }
+
+        &.rounded-light {
+            border-radius: 8px;
+            height: 2.1rem;
+        }
+
+        &.icon {
+            padding: 0;
+            margin: 0;
+            min-width: 2.1rem !important;
+            height: 2.1rem;
+        }
+
+        &.poster-btn {
+            width: 170px;
+            border-radius: 60px;
+        }
+    }
+}

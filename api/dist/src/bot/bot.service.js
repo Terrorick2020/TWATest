@@ -5,19 +5,57 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BotService = void 0;
 const common_1 = require("@nestjs/common");
+const nestjs_telegraf_1 = require("nestjs-telegraf");
+const telegraf_1 = require("telegraf");
 let BotService = class BotService {
-    async sendGreeting(ctx) {
-        await ctx.reply('👋 Привет! Я твой Telegram-бот для знакомств на NestJS.');
+    bot;
+    constructor(bot) {
+        this.bot = bot;
     }
-    async sendHelp(ctx) {
-        await ctx.reply('📖 Доступные команды:\n/start - Запуск бота\n/help - Помощь');
+    async start(ctx) {
+        const mainKeyboard = {
+            reply_markup: {
+                keyboard: [
+                    [
+                        { text: 'Лайк' },
+                        { text: 'Сообщение' },
+                    ],
+                ],
+                resize_keyboard: true,
+                one_time_keyboard: true,
+            },
+        };
+        const inlineKeyboard = {
+            reply_markup: {
+                inline_keyboard: [
+                    [
+                        {
+                            text: 'К знакомствам',
+                            web_app: {
+                                url: 'https://10.16.15.207:5173/',
+                            },
+                        },
+                    ],
+                ],
+            },
+        };
+        await ctx.reply('Добро пожаловать! Используйте кнопки ниже:', mainKeyboard);
+        await ctx.reply('Нажми для перехода к знакомствам', inlineKeyboard);
     }
 };
 exports.BotService = BotService;
 exports.BotService = BotService = __decorate([
-    (0, common_1.Injectable)()
+    (0, common_1.Injectable)(),
+    __param(0, (0, nestjs_telegraf_1.InjectBot)()),
+    __metadata("design:paramtypes", [telegraf_1.Telegraf])
 ], BotService);
 //# sourceMappingURL=bot.service.js.map

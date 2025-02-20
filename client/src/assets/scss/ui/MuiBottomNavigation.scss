@@ -1,0 +1,33 @@
+#root {
+    --vav-default-color: #AAAAAA;
+    --nav-selected-color: #2990FF;
+
+    .MuiBox-root {
+        border-top: 2px solid #5a5a5a;
+        padding-top: 1px;
+    }
+
+    .MuiBottomNavigation-root {
+        background: transparent;
+
+        .MuiButtonBase-root {
+            color: var(--vav-default-color);
+
+            svg {
+                path {
+                    stroke: var(--vav-default-color);
+                }
+            }
+
+            &.Mui-selected {
+                color: var(--nav-selected-color);
+
+                svg {
+                    path {
+                        stroke: var(--nav-selected-color);
+                    }
+                }
+            }
+        }
+    }
+}
