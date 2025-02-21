@@ -1,18 +1,19 @@
 services:
-  # server:
-  #   build: ./api
-  #   environment:
-  #     - HOST=0.0.0.0
-  #   networks:
-  #     - planner_network
-  #   ports:
-  #     - "3000:3000"
+  server:
+    build:
+      context: ./api
+    environment:
+      - HOST=0.0.0.0
+    networks:
+      - planner_network
+    ports:
+      - "3000:3000"
 
   client:
     build:
       context: ./client
-    # depends_on:
-      # - server
+    depends_on:
+      - server
     networks:
       - planner_network
     ports:
