@@ -33,17 +33,12 @@ const SliderPoster = () => {
     return (
         <>
             <div {...handlers} className="poster__content" style={{ position: 'relative', overflow: 'hidden' }}>
+                <div className="shadow"></div>
                 <div
                     className="poster__background"
                     style={{
-                        position: 'absolute',
-                        width: '100%',
-                        height: '100%',
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
                         opacity: fade ? 1 : 0,
                         backgroundImage: `url(${items[index].img})`,
-                        transition: 'opacity 0.5s ease-in-out',
                     }}
                 />
                 <SliderItem item={items[index]} index={index} len={items.length} />

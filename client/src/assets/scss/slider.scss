@@ -34,10 +34,30 @@
             padding: 1em 1em;
             display: grid;
             grid-template-rows: 2fr auto 5fr;
-            box-shadow: inset 0 1.875rem 1rem -0.3125rem var(--slider-shadow-color),
+            box-shadow: inset 0 1.875rem 1rem -0.2125rem var(--slider-shadow-color),
                         inset 0 -1.875rem 1.25rem -0.3125rem var(--slider-shadow-color);
+            
+            .shadow {
+                position: absolute;
+                width: 100%;
+                height: 10px;
+                background: linear-gradient(to bottom, #060606, transparent);
+
+                z-index: 1;
+                top: 0;
+            }
 
             .poster__background {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                border-radius: 0;
+                transition: opacity 0.5s ease-in-out;
+                box-shadow: inset 0 1.875rem 1.25rem -0.1125rem var(--slider-shadow-color),
+                            inset 0 -1.875rem 1.25rem -0.3125rem var(--slider-shadow-color);
+
                 .link {
                     position: absolute;
                     width: 100%;

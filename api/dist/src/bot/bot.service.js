@@ -21,19 +21,18 @@ let BotService = class BotService {
     constructor(bot) {
         this.bot = bot;
     }
-    async start(ctx) {
-        const mainKeyboard = {
-            reply_markup: {
-                keyboard: [
-                    [
-                        { text: 'Лайк' },
-                        { text: 'Сообщение' },
-                    ],
-                ],
-                resize_keyboard: true,
-                one_time_keyboard: true,
+    async setWebAppButton() {
+        await this.bot.telegram.setChatMenuButton({
+            menuButton: {
+                type: 'web_app',
+                text: 'Знакомства',
+                web_app: {
+                    url: 'https://10.16.15.207:5173/',
+                },
             },
-        };
+        });
+    }
+    async start(ctx) {
         const inlineKeyboard = {
             reply_markup: {
                 inline_keyboard: [
@@ -48,8 +47,7 @@ let BotService = class BotService {
                 ],
             },
         };
-        await ctx.reply('Добро пожаловать! Используйте кнопки ниже:', mainKeyboard);
-        await ctx.reply('Нажми для перехода к знакомствам', inlineKeyboard);
+        await ctx.reply('Добро пожаловать! Здесь можно протестировать выполнение техниеского задания!', inlineKeyboard);
     }
 };
 exports.BotService = BotService;

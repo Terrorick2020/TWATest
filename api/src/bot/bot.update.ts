@@ -10,9 +10,4 @@ export class BotUpdate {
     async onStart(@Ctx() ctx: Context) {
         await this.botService.start(ctx)
     }
-
-    // @Command('help')
-    // async onHelp(@Ctx() ctx: Context) {
-    //     await this.botService.sendHelp(ctx)
-    // }
 }

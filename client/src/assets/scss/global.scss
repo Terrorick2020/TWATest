@@ -12,7 +12,7 @@
     --primary-selection-bg-color: #12b99a;
     --primary-selection-font-color: #ffffff;
 
-    --primary-bg-color: #1C1C1C;
+    --primary-bg-color: #060606;
     --primary-color: #FFFFFF;
 }
 
@@ -32,6 +32,10 @@ h4 { @include mixins.fluid-text(28, 22) }
 h5 { @include mixins.fluid-text(24, 20) }
 h6 { @include mixins.fluid-text(20, 18) }
 p  { @include mixins.fluid-text(16, 14) }
+
+img, svg {
+    user-select: none;
+}
 
 #root {
     width: 100%;

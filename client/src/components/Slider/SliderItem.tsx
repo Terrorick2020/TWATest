@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate  } from 'react-router-dom'
 import { appRoutes } from '../../config/routes.config'
 
 import Button from '@mui/material/Button'
@@ -24,6 +24,12 @@ interface ISliderItemProps {
 }
 
 const SliderItem = (props: ISliderItemProps) => {
+
+    const navigate = useNavigate()
+
+    const handleLink = () => {
+        navigate("/detaails")
+    }
 
     const barList = Array.from({ length: props.len }, (_, i) => i + 1)
 
@@ -57,7 +63,7 @@ const SliderItem = (props: ISliderItemProps) => {
                 </div>
             </div>
             <div className="poster__footer">
-                <NavLink className="poster__prof-desc" to={appRoutes.details}>
+                <NavLink onClick={handleLink} className="poster__prof-desc" to={appRoutes.details}>
                     <h3 className="name">Виктория, 20 лет</h3>
                     <p className="text">Много работаю ( просто пекарь, бариста, кассир ) Играю на виолончели 🎻 Люблю гулять на свежем воздухе...</p>
                 </NavLink>

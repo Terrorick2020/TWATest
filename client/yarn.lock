@@ -1641,6 +1641,11 @@
   resolved "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.34.8.tgz"
   integrity sha512-U0FaE5O1BCpZSeE6gBl3c5ObhePQSfk9vDRToMmTkbhCOgW4jqvtS5LGyQ76L1fH8sM0keRp4uDTsbjiUyjk0g==
 
+"@solidjs/router@^0.15.3":
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/@solidjs/router/-/router-0.15.3.tgz#2c5e7aa637980ab7fce956aedc8cd20614163f2a"
+  integrity sha512-iEbW8UKok2Oio7o6Y4VTzLj+KFCmQPGEpm1fS3xixwFBdclFVBvaQVeibl1jys4cujfAK5Kn6+uG2uBm3lxOMw==
+
 "@svgr/babel-plugin-add-jsx-attribute@8.0.0":
   version "8.0.0"
   resolved "https://registry.npmjs.org/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-8.0.0.tgz"
@@ -1888,6 +1893,20 @@
   resolved "https://registry.yarnpkg.com/@telegram-apps/react-router-integration/-/react-router-integration-1.0.1.tgz#a42a28b45d8f5f224845801599a91a776191bfa8"
   integrity sha512-q5fC0ihXyUDqrSdLQ3u3gypmjI/rMU2mTHeAz9IU1F1bl5X+J17LxWmgLp+OlD0Y97bq2XYmc+UbKrYh+eN3Wg==
 
+"@telegram-apps/sdk-react@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@telegram-apps/sdk-react/-/sdk-react-3.1.0.tgz#59fb83b3e61e295628d97e13ea4bca897e8272a0"
+  integrity sha512-Bg5n2EIDGSYJYe020FsbmiQTBekfIXFQbs4DWKGEl9kk4SA3LShsx3ZJdwyTwWf421mxwuQtrxedhbhsoVPg9g==
+  dependencies:
+    "@telegram-apps/sdk" "^3.4.0"
+
+"@telegram-apps/sdk-solid@^3.0.10":
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/@telegram-apps/sdk-solid/-/sdk-solid-3.0.10.tgz#fbc26ce380ef48f0b53f7ca6ff3d2e75b4bc647a"
+  integrity sha512-OkJJpHJkmdcpBubvkUuizLdnK9CquDsmgOodYrlYftL6LIGyGSydnZNOexJHaVUE2Pqym0RZrQ7Olfj6KGNzwA==
+  dependencies:
+    "@telegram-apps/sdk" "^3.4.0"
+
 "@telegram-apps/sdk@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@telegram-apps/sdk/-/sdk-3.4.0.tgz#4b069f62da4f6db74e95ad726500c5ce93b3137d"
@@ -1907,6 +1926,11 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@telegram-apps/signals/-/signals-1.1.1.tgz#807e7b73ba665126a5024dd4578e9aed52c06012"
   integrity sha512-vz37r8lemGpPzDiBRfqpXYBynzmy3SFnY6zfHsTZABTYYt0b0WQZyU5mFDqqqugGhka78Gy11xmr9csgy4YgGA==
+
+"@telegram-apps/solid-router-integration@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@telegram-apps/solid-router-integration/-/solid-router-integration-1.0.1.tgz#13736adb8861ba127581c2761699316d99f2bb12"
+  integrity sha512-yqnfq5yzo54anye+co4KKjrGEbpZ+7jEjmq4VUi1QEV+ma9KGTmkgY8j5aNfG5+VkO0EyrX1+a8iy44u2jE9sA==
 
 "@telegram-apps/toolkit@^1.1.1":
   version "1.1.1"

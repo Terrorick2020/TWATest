@@ -7,22 +7,22 @@ import { Context } from 'telegraf/typings/context';
 export class BotService {
   constructor(@InjectBot() private readonly bot: Telegraf<Context>) {}
 
-  async start(ctx: Context) {
-    // Основная клавиатура
-    const mainKeyboard = {
-      reply_markup: {
-        keyboard: [
-          [
-            { text: 'Лайк' },
-            { text: 'Сообщение' },
-          ],
-        ],
-        resize_keyboard: true,
-        one_time_keyboard: true,
-      },
-    };
+  async setWebAppButton() {
 
-    // Inline клавиатура с кнопкой для открытия Web App
+    await this.bot.telegram.setChatMenuButton({
+      menuButton: {
+        type: 'web_app',
+        text: 'Знакомства',
+        web_app: {
+          url: 'https://10.16.15.207:5173/',
+        },
+      },
+    });
+  }
+
+
+  async start(ctx: Context) {
+
     const inlineKeyboard = {
       reply_markup: {
         inline_keyboard: [
@@ -30,7 +30,7 @@ export class BotService {
             {
               text: 'К знакомствам',
               web_app: {
-                url: 'https://10.16.15.207:5173/', // Заменить на URL твоего веб-приложения
+                url: 'https://10.16.15.207:5173/',
               },
             },
           ],
@@ -38,10 +38,7 @@ export class BotService {
       },
     };
 
-    // Отправляем первое сообщение с основной клавиатурой
-    await ctx.reply('Добро пожаловать! Используйте кнопки ниже:', mainKeyboard);
+    await ctx.reply('Добро пожаловать! Здесь можно протестировать выполнение техниеского задания!', inlineKeyboard)
 
-    // Отправляем дополнительное сообщение с кнопкой в inline клавиатуре
-    await ctx.reply('Нажми для перехода к знакомствам', inlineKeyboard);
   }
 }
