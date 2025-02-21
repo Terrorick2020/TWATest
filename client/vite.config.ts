@@ -12,10 +12,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   server: {
-    https: {
-      key: './certs/key.pem',
-      cert: './certs/cert.pem',
-    },
     host: '0.0.0.0',
     port: 5173,
   }
