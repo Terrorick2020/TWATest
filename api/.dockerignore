@@ -1,4 +1,2 @@
-.env.example
-
 node_modules/
-test/
+dist/

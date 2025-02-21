@@ -21,17 +21,6 @@ let BotService = class BotService {
     constructor(bot) {
         this.bot = bot;
     }
-    async setWebAppButton() {
-        await this.bot.telegram.setChatMenuButton({
-            menuButton: {
-                type: 'web_app',
-                text: 'Знакомства',
-                web_app: {
-                    url: 'https://10.16.15.207:5173/',
-                },
-            },
-        });
-    }
     async start(ctx) {
         const inlineKeyboard = {
             reply_markup: {
@@ -40,7 +29,7 @@ let BotService = class BotService {
                         {
                             text: 'К знакомствам',
                             web_app: {
-                                url: 'https://10.16.15.207:5173/',
+                                url: 'http://localhost:5173/',
                             },
                         },
                     ],

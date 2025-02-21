@@ -7,20 +7,6 @@ import { Context } from 'telegraf/typings/context';
 export class BotService {
   constructor(@InjectBot() private readonly bot: Telegraf<Context>) {}
 
-  async setWebAppButton() {
-
-    await this.bot.telegram.setChatMenuButton({
-      menuButton: {
-        type: 'web_app',
-        text: 'Знакомства',
-        web_app: {
-          url: 'https://10.16.15.207:5173/',
-        },
-      },
-    });
-  }
-
-
   async start(ctx: Context) {
 
     const inlineKeyboard = {
