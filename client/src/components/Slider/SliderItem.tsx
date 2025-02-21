@@ -1,4 +1,4 @@
-import { NavLink, useNavigate  } from 'react-router-dom'
+import { useNavigate  } from 'react-router-dom'
 import { appRoutes } from '../../config/routes.config'
 
 import Button from '@mui/material/Button'
@@ -28,7 +28,7 @@ const SliderItem = (props: ISliderItemProps) => {
     const navigate = useNavigate()
 
     const handleLink = () => {
-        navigate("/detaails")
+        navigate(appRoutes.details)
     }
 
     const barList = Array.from({ length: props.len }, (_, i) => i + 1)
@@ -63,10 +63,10 @@ const SliderItem = (props: ISliderItemProps) => {
                 </div>
             </div>
             <div className="poster__footer">
-                <NavLink onClick={handleLink} className="poster__prof-desc" to={appRoutes.details}>
+                <div onClick={handleLink} className="poster__prof-desc">
                     <h3 className="name">Виктория, 20 лет</h3>
                     <p className="text">Много работаю ( просто пекарь, бариста, кассир ) Играю на виолончели 🎻 Люблю гулять на свежем воздухе...</p>
-                </NavLink>
+                </div>
                 <div className="poster__btns">
                     <Button
                         className="poster-btn"

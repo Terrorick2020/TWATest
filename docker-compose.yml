@@ -1,19 +1,18 @@
 services:
-  server:
-    build: ./api
-    environment:
-      - HOST=0.0.0.0
-    networks:
-      - planner_network
-    ports:
-      - "3000:3000"
+  # server:
+  #   build: ./api
+  #   environment:
+  #     - HOST=0.0.0.0
+  #   networks:
+  #     - planner_network
+  #   ports:
+  #     - "3000:3000"
 
   client:
-    build: ./client
-    environment:
-      - VITE_SERVER_URL=http://localhost/api
-    depends_on:
-      - server
+    build:
+      context: ./client
+    # depends_on:
+      # - server
     networks:
       - planner_network
     ports:
