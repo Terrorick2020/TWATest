@@ -30,7 +30,7 @@ export class BotService {
             {
               text: 'К знакомствам',
               web_app: {
-                url: 'https://10.16.15.207:5173/',
+                url: 'http://localhost:5173/',
               },
             },
           ],
