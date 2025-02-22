@@ -1,6 +1,6 @@
 services:
-  server:
-    build: ./api
+  bot_1:
+    build: ./bot_1
     dns:
       - 8.8.8.8
       - 8.8.4.4
@@ -10,10 +10,22 @@ services:
     ports:
       - "3000:3000"
 
+  bot_2:
+    build: ./bot_2
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+      - 1.1.1.1
+    networks:
+      - planner_network
+    ports:
+      - "4000:4000"
+
   client:
     build: ./client
     depends_on:
-      - server
+      - bot_1
+      - bot_2
     networks:
       - planner_network
     ports:
@@ -22,8 +34,9 @@ services:
   proxy:
     build: ./nginx
     depends_on:
+      - bot_1
+      - bot_2
       - client
-      - server
     networks:
       - planner_network
     ports:

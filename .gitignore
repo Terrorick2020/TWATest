@@ -1,7 +1,10 @@
-api/node_modules/
+bot_1/node_modules/
+bot_2/node_modules/
 client/node_modules/
 
-api/.env
+bot_1/.env
+bot_2/.env
 client/.env
 
-nginx/ssl/*
+**/*.crt
+**/*.key
