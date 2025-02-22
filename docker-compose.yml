@@ -1,7 +1,6 @@
 services:
   server:
-    build:
-      context: ./api
+    build: ./api
     dns:
       - 8.8.8.8
       - 8.8.4.4
@@ -12,14 +11,26 @@ services:
       - "3000:3000"
 
   client:
-    build:
-      context: ./client
+    build: ./client
     depends_on:
       - server
     networks:
       - planner_network
     ports:
       - "4173:4173"
+
+  proxy:
+    build: ./nginx
+    depends_on:
+      - client
+      - server
+    networks:
+      - planner_network
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    command: ["/bin/bash", "-c", "nginx -g 'daemon off;'"] 
 
 networks:
   planner_network:
