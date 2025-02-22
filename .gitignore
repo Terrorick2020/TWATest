@@ -4,4 +4,5 @@ client/node_modules/
 api/.env
 client/.env
 
-nginx/ssl/*
+nginx/ssl/selfsigned.crt
+nginx/ssl/selfsigned.key
